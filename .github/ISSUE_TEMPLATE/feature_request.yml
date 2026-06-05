@@ -1,0 +1,76 @@
+name: ✨ Feature Request
+description: 提议新功能、改进体验或提出对现有功能的优化建议
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出你的想法 ✨
+        请描述清楚「你想要什么」「为什么需要」「怎样才算做好」。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决的问题
+      description: |
+        描述当前的工作流中让你感到痛的地方。
+        越具体越好——不要只说「不够好用」，说清楚「哪里不好用」。
+      placeholder: |
+        例：当我需要在 5 个项目之间切换会话时，目前必须打开 5 个独立窗口，
+        期望能在一个窗口里用 Tab 切换。
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望的解决方案
+      description: 描述你认为最理想的功能形态（可以画 ASCII 草图）
+      placeholder: |
+        例：在主窗口顶部加一个 Tab 栏，每个 Tab 独立维护会话状态，
+        支持拖拽排序、快捷键 Ctrl+1~5 切换。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 备选方案（可选）
+      description: 你考虑过的其他实现方式
+    validations:
+      required: false
+  - type: dropdown
+    id: category
+    attributes:
+      label: 功能分类
+      description: 建议的功能归属
+      options:
+        - 🤖 AI Agent 能力
+        - 🛠️ 工具集（Tools）
+        - ⚡ 斜杠命令（Slash Commands）
+        - 🎨 UI / 交互
+        - 🔌 MCP 协议集成
+        - 🔐 安全 / 权限
+        - 📦 多会话管理
+        - 🌐 国际化
+        - 📖 文档
+        - 🧰 其他
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级（自评）
+      description: 你认为这个功能的优先级
+      options:
+        - 🔥 高（强烈影响日常工作流）
+        - ⭐ 中（会带来明显提升）
+        - 💡 低（锦上添花）
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: 参考实现（可选）
+      description: 其他产品或工具的类似功能截图、链接
+    validations:
+      required: false

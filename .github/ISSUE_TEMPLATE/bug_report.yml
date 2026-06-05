@@ -1,0 +1,104 @@
+name: 🐛 Bug Report
+description: 报告 FluxWorker 的功能异常、性能问题或界面错误
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你提交 Bug 报告 🐛
+        请尽可能详细地描述问题，并按下面的清单填写信息——**信息越完整，越容易被复现和修复**。
+  - type: input
+    id: version
+    attributes:
+      label: FluxWorker 版本号
+      description: 在「关于」页面可看到，例如 v1.0.8
+      placeholder: v1.0.8
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      description: 出现问题的客户端系统
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS 14 (Sonoma)
+        - macOS 13 (Ventura)
+        - Ubuntu 22.04
+        - Ubuntu 20.04
+        - 其他 Linux 发行版
+    validations:
+      required: true
+  - type: input
+    id: arch
+    attributes:
+      label: 系统架构
+      description: 处理器架构
+      placeholder: x64 / arm64
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 用 1~3 句话清晰描述问题
+      placeholder: |
+        例：在打开多会话窗口时，第三个会话的输入框无法获得焦点。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 列出从启动到出现问题的完整操作步骤
+      placeholder: |
+        1. 打开 FluxWorker
+        2. 依次点击「新建会话」三次
+        3. 切换到第三个会话
+        4. 观察输入框焦点状态
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+      description: 你认为应该发生什么
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      description: 实际发生了什么（截图、报错信息请粘贴在这里）
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: |
+        可在以下位置找到日志：
+        - Windows：`%APPDATA%\fluxworker\logs\`
+        - macOS：`~/Library/Logs/fluxworker/`
+        - Linux：`~/.config/fluxworker/logs/`
+      placeholder: |
+        ```
+        [2026-05-29 14:32:11] ERROR ...
+        ```
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 严重程度
+      description: 自评问题的影响范围
+      options:
+        - 🔴 严重（无法使用核心功能）
+        - 🟠 高（功能受损但有 workaround）
+        - 🟡 中（影响体验但不影响主流程）
+        - 🟢 低（文字、样式、细节问题）
+    validations:
+      required: true

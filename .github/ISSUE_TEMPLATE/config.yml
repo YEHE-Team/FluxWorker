@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 社区讨论（QQ 群）
+    url: https://github.com/YEHE-Team/FluxWorker/discussions
+    about: 一般性问题与功能讨论，请优先在社区发起
+  - name: 📖 项目文档
+    url: https://github.com/YEHE-Team/FluxWorker#readme
+    about: 在提交问题前，请先查阅 README 中已记录的功能与故障排除章节
+  - name: 📧 邮件安全报告（高危问题）
+    url: mailto:security@yehe-team.dev
+    about: 关键 RCE / 数据泄露等高危问题请直接邮件私发，避免在公开 issue 披露
