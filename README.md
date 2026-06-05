@@ -14,7 +14,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/YEHE-Team/FluxWorker)](https://github.com/YEHE-Team/FluxWorker/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/YEHE-Team/FluxWorker)](https://github.com/YEHE-Team/FluxWorker/pulls)
 [![GitHub release](https://img.shields.io/github/v/release/YEHE-Team/FluxWorker)](https://github.com/YEHE-Team/FluxWorker/releases)
-[![GitHub license](https://img.shields.io/github/license/YEHE-Team/FluxWorker)](LICENSE)
 
 </div>
 
