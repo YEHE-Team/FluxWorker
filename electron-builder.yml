@@ -1,0 +1,61 @@
+appId: com.fluxworker.app
+productName: FluxWorker
+copyright: Copyright © 2025 FluxWorker
+
+directories:
+  output: dist
+  buildResources: resources
+
+files:
+  - out/**/*
+  - package.json
+
+extraResources:
+  - from: resources/
+    to: .
+    filter:
+      - "icon.*"
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: ${productName}-Setup-${version}.${ext}
+  icon: resources/icon.ico
+  publish:
+    - provider: github
+      owner: YEHE-Team
+      repo: FluxWorker
+      releaseType: release
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: FluxWorker
+
+mac:
+  target: dmg
+  icon: resources/icon.png
+  category: public.app-category.developer-tools
+  publish:
+    - provider: github
+      owner: YEHE-Team
+      repo: FluxWorker
+      releaseType: release
+
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: resources/icon.png
+  category: Development
+  publish:
+    - provider: github
+      owner: YEHE-Team
+      repo: FluxWorker
+      releaseType: release
