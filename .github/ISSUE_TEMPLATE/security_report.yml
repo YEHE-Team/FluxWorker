@@ -1,7 +1,7 @@
 name: 🛡️ Security Report
 description: 报告 FluxWorker 相关的安全问题（提示词注入、越狱、权限绕过、信息泄露等）
 title: "[Security]: "
-labels: ["security"]
+labels: ["security", "triage"]
 assignees: []
 body:
   - type: markdown
@@ -10,8 +10,18 @@ body:
         ⚠️ **请仔细阅读**
         - 安全问题在**修复前不应公开披露**，本 issue 提交后会进入私密模式处理
         - 请**只描述攻击路径与必要证据**，**不要**公开完整攻击 prompt
-        - 如发现关键 RCE / 数据泄露等高危问题，也可通过邮件私发：`security@yehe-team.dev`
-        - 我们承诺 48 小时内首响，致谢并跟进
+        - 如发现关键 RCE / 数据泄露等高危问题，请通过邮件私发：`security@yehe-team.dev`
+        - 🕐 **响应时间承诺**：我们会在 **48 小时内首响**，72 小时内给出修复计划
+        - 🏆 **致谢机制**：修复发布后会在 SECURITY.md 中公开致谢（可选择匿名）
+  - type: checkboxes
+    id: pre_check
+    attributes:
+      label: ✅ 提交前自检清单
+      options:
+        - label: 我已阅读 [SECURITY.md](https://github.com/YEHE-Team/FluxWorker/blob/main/SECURITY.md) 中已有的致谢 / 修复列表，确认这不是已知问题
+          required: true
+        - label: 我未在公开渠道（博客、推特、其他 issue）披露过该漏洞细节
+          required: true
   - type: dropdown
     id: vuln_type
     attributes:
@@ -37,10 +47,10 @@ body:
     attributes:
       label: 严重程度（CVSS 自评）
       description: |
-        - Critical：远程利用、可获取敏感数据或 RCE
-        - High：需要交互、可绕过核心防御
-        - Medium：需特定条件、影响有限
-        - Low：理论存在、实际利用困难
+        - 🔴 Critical：远程利用、可获取敏感数据或 RCE
+        - 🟠 High：需要交互、可绕过核心防御
+        - 🟡 Medium：需特定条件、影响有限
+        - 🟢 Low：理论存在、实际利用困难
       options:
         - 🔴 Critical
         - 🟠 High
@@ -48,6 +58,14 @@ body:
         - 🟢 Low
     validations:
       required: true
+  - type: input
+    id: cwe
+    attributes:
+      label: CWE 编号（可选）
+      description: 如果你知道对应的 CWE 分类，请填写
+      placeholder: CWE-77 / CWE-94
+    validations:
+      required: false
   - type: input
     id: version
     attributes:
@@ -66,6 +84,26 @@ body:
       placeholder: 1-xxxxxxxxx
     validations:
       required: false
+  - type: input
+    id: discovery_time
+    attributes:
+      label: 发现时间
+      description: 你第一次发现该问题的时间（YYYY-MM-DD）
+      placeholder: 2026-05-29
+    validations:
+      required: false
+  - type: dropdown
+    id: exploit_difficulty
+    attributes:
+      label: 利用难度
+      description: 自评该漏洞被实际利用的难易程度
+      options:
+        - 🟢 容易（无需任何前置条件）
+        - 🟡 中等（需要特定环境或权限）
+        - 🔴 困难（需要深度技术能力或特定时序）
+        - ❓ 难以评估
+    validations:
+      required: false
   - type: dropdown
     id: os
     attributes:
@@ -73,6 +111,7 @@ body:
       options:
         - Windows 11
         - Windows 10
+        - macOS 15
         - macOS 14
         - macOS 13
         - Ubuntu
@@ -116,10 +155,21 @@ body:
     validations:
       required: false
   - type: dropdown
-    id: disclosure
+    id: disclosed_elsewhere
+    attributes:
+      label: 是否已在其他渠道披露
+    options:
+        - 否，仅在此处首次报告
+        - 是，已在博客 / 推特 / 会议公开
+        - 是，已私下告知其他厂商
+        - 暂未决定
+    validations:
+      required: true
+  - type: dropdown
+    id: credit
     attributes:
       label: 是否接受致谢
-      description: |
+    description: |
         修复发布后是否愿意在 SECURITY.md / Release Notes 中公开致谢。
         选择「否」则保持完全匿名。
       options:

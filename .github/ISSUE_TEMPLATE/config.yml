@@ -1,17 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 社区讨论（QQ 群 / GitHub Discussions）
+  - name: 💬 GitHub Discussions
     url: https://github.com/YEHE-Team/FluxWorker/discussions
-    about: 一般性问题、功能讨论、使用交流，请优先在社区发起
-  - name: 📖 项目文档（README）
+    about: 提问、讨论、分享用法的首选场所
+  - name: 📖 README
     url: https://github.com/YEHE-Team/FluxWorker#readme
-    about: 提交问题前，请先查阅 README 中已记录的功能、FAQ 与故障排除章节
-  - name: 📜 贡献者公约（Code of Conduct）
-    url: https://github.com/YEHE-Team/FluxWorker/blob/main/CODE_OF_CONDUCT.md
-    about: 社区参与前请阅读公约，营造友善、专业的讨论环境
-  - name: 🏆 安全致谢墙（Hall of Fame）
-    url: https://github.com/YEHE-Team/FluxWorker/blob/main/SECURITY.md
-    about: 查看已修复并公开致谢的安全贡献者
-  - name: 📧 邮件安全报告（高危 / 0day 通道）
-    url: mailto:security@yehe-team.dev
-    about: 关键 RCE / 大量数据泄露等高危问题请直接邮件私发，避免在公开 issue 披露
+    about: 先读 README，确认不是已有功能
+  - name: 🏠 官方网站
+    url: https://fluxworker.yehe.team
+    about: 了解 FluxWorker 的最新动态
