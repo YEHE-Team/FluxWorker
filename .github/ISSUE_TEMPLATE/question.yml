@@ -1,0 +1,43 @@
+name: ❓ Question / Help
+description: 使用咨询、操作指引类问题请优先在 Discussions 发起
+title: "[Question]: "
+labels: ["question", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ❓ 使用咨询请优先在 Discussions 发起，会更快得到社区响应。
+        确认是缺陷请改用 Bug 模板，是新功能请改用 Feature Request 模板。
+        ⚠️ 单纯使用问题在 14 天内无回复将被自动关闭。
+  - type: dropdown
+    id: question_type
+    attributes:
+      label: 问题类型
+      options: [🛠️ 安装配置, 🚀 使用方法, 🔌 MCP集成, 🤖 AI行为, 📖 文档没答案, 🧩 其他]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: FluxWorker 版本号
+      placeholder: v1.0.8
+    validations:
+      required: false
+  - type: textarea
+    id: goal
+    attributes:
+      label: 你想达成什么
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: 你已尝试过什么
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 你的具体问题
+    validations:
+      required: true

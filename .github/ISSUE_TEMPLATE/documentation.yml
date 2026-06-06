@@ -1,0 +1,38 @@
+name: 📖 Documentation Issue
+description: 报告 README、文档站、内联注释、API 文档中的错误、缺失或表述不清
+title: "[Docs]: "
+labels: ["documentation", "triage"]
+body:
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: 文档位置
+      options: [README.md, Wiki, 代码注释, API 文档, CHANGELOG, 错误提示, CLI 帮助, 其他]
+    validations:
+      required: true
+  - type: input
+    id: doc_location
+    attributes:
+      label: 具体位置
+      placeholder: docs/getting-started.mdx 第 42 行
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: 问题类型
+      options: [❌ 错误信息, ❓ 表述不清, 🕳️ 内容缺失, 🔗 链接失效, 🈶 错别字, 🌐 翻译, 其他]
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题详细描述
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议修改（可选）
+    validations:
+      required: false

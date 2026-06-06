@@ -1,0 +1,67 @@
+name: ⚡ Performance Issue
+description: 报告启动慢、操作卡顿、内存占用高、CPU 飙升、I/O 慢等性能问题
+title: "[Perf]: "
+labels: ["performance", "triage"]
+body:
+  - type: dropdown
+    id: perf_type
+    attributes:
+      label: 性能问题类别
+      options: [🚀 启动慢, ⏱️ 操作延迟, 💾 内存高, 🔥 CPU 异常, 💽 磁盘 I/O, 🌐 网络慢, 🎬 动画掉帧, 🧠 大文件慢, 🧩 其他]
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: 触发操作
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: 期望耗时
+      placeholder: < 500ms
+    validations:
+      required: true
+  - type: input
+    id: actual
+    attributes:
+      label: 实际耗时
+      placeholder: 3~4 秒
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: FluxWorker 版本
+      placeholder: v1.0.8
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options: [Windows 11, Windows 10, macOS 15, macOS 14, macOS 13, Ubuntu, 其他 Linux]
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: 硬件配置（可选）
+      placeholder: i7-13700H / 32GB / NVMe SSD
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 影响程度
+      options: [🔴 严重, 🟠 高, 🟡 中, 🟢 低]
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: 是否可稳定复现
+      options: [必现, 偶发, 仅一次]
+    validations:
+      required: true
